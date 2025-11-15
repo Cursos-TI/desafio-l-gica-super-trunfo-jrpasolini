@@ -103,14 +103,40 @@ printf("PIB per Capita - %s: R$ %.2f\n", cidade2, pibpercapita2 * 10000000);
 
 /* Abaixo vamos apresentar essa saíde de dados comparando os resultados entre as cartas*/
 printf ("Os superpoderes das cartas são: %s / %s: %.2f e %s / %s: %.2f\n", cidade1, estado1, superpoder1, cidade2, estado2, superpoder2);  
-printf("Resultado do vencedor na comparação das cartas: Se o resultado for 1, %s vence. Se for 0, a %s vence.\n", cidade1, cidade2);
-printf("A População de %s venceu? %d\n", cidade1, (populacao1 > populacao2));
-printf("Area total de %s venceu? %d\n", cidade1, (areacidade1 > areacidade2));
-printf("Pontos Turisticos de %s venceu? %d\n", cidade1, (pontosturisticos1 > pontosturisticos2));
-printf("PIB da cidade de %s venceu? %d\n", cidade1, (PIB1 > PIB2));
-printf("Densidade Populacional (menor é melhor) da %s venceu? %d\n", cidade2, (densidade1 < densidade2));
+printf("Resultado do vencedor na comparação das cartas entre %s e  %s.\n", cidade1, cidade2);
+printf("Quem tem a maior população?");
+if (populacao1 > populacao2) {
+    printf(" %s venceu no quesito população!\n", cidade1);} else {
+    printf(" %s venceu no quesito população!\n", cidade2); }
 
-/* Agora vamos apresentar o Super Poder e definir qual carta é a vencedora do Super Trunfo!!! */
-printf("Super Poder de %s venceu? %d\n", cidade1, (superpoder1 > superpoder2));
+printf("Quem tem a maior área?");
+if (areacidade1 > areacidade2) {
+    printf(" %s venceu no quesito maior área!\n", cidade1);} else {
+    printf(" %s venceu no quesito maior área!\n", cidade2); }
+
+printf("Quem tem mais pontos turísticos?");
+if (pontosturisticos1 > pontosturisticos2) {
+    printf(" %s venceu no quesito mais pontos turísticos!\n", cidade1);} else {
+    printf(" %s venceu no quesito mais pontos turísticos!\n", cidade2); }
+
+printf("Quem tem o maior PIB?");
+if (PIB1 > PIB2) {
+    printf(" %s venceu no quesito maior PIB!\n", cidade1);} else {
+    printf(" %s venceu no quesito maior PIB!\n", cidade2); }
+
+printf("Quem tem a menor densidade populacional? (Aqui o menor valor vence)");
+if (densidade1 < densidade2) {
+    printf(" %s venceu no quesito menor densidade populacional!\n", cidade1);} else {
+    printf(" %s venceu no quesito menor densidade populacional!\n", cidade2); }
+
+/* Apresentando o vencedor */
+printf ("Agora vamos apresentar a Carta Vendedora do nosso Super Trunfo baseado no Super Poder:\n");
+printf("E o grande vencedor é... ");
+if (superpoder1 > superpoder2) {
+    printf(" %s do estado do %s com um super poder de %.2f!\n", cidade1, estado1, superpoder1);} else {
+    printf(" %s do estado do %s com um super poder de %.2f!\n", cidade2, estado2, superpoder2); }
+ 
+printf("Obrigado por jogar nosso Super Trunfo! Volte sempre!\n");
+ 
     return 0;
 }

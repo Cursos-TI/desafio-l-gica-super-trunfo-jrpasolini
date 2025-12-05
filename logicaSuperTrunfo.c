@@ -6,7 +6,14 @@
 // Siga os comentários para implementar cada parte do desafio.
 
 int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
+    /* Vou iniciar um menu utilizando switch para iniciar o jogo, regras do jogo ou sair do jogo*/
+    int escolha;
+    printf("***** Bem-vindo ao Super Trunfo! *****\n Por favor, escolha uma opção para continuar:\n1. Iniciar Jogo\n2. Regras do Jogo\n3. Sair\n");
+    scanf("%d", &escolha);
+    switch (escolha) {
+        case 1:
+            printf("Iniciando o jogo...\n");
+// Definição das variáveis para armazenar as propriedades das cidades
     // Você pode utilizar o código do primeiro desafio
 printf("Vamos iniciar nosso jogo de Super Trunfo!\nPara isso, iremos coletar dados de 2 cartas distintas sobre 2 estados brasileiros\nPreencha os dados conforme solicitaado e vamos iniciar a brincadeira!\n");
 char estado1[3] = "a67", estado2[3] = "b67";     // utilizei um array de 3 caracteres para garantir que a sigla do estado caiba na variavel
@@ -104,39 +111,73 @@ printf("PIB per Capita - %s: R$ %.2f\n", cidade2, pibpercapita2 * 10000000);
 /* Abaixo vamos apresentar essa saíde de dados comparando os resultados entre as cartas*/
 printf ("Os superpoderes das cartas são: %s / %s: %.2f e %s / %s: %.2f\n", cidade1, estado1, superpoder1, cidade2, estado2, superpoder2);  
 printf("Resultado do vencedor na comparação das cartas entre %s e  %s.\n", cidade1, cidade2);
+printf("Vamos comparar os atributos das cidades:\n Por favor, escolha uma opção de comparação:\n");
+printf("1. Comparar População\n2. Comparar area total?\n3. Comparar Pontos Turisticos\n4. Comparar PIB\n5. Comparar Densidade Populacional\n6. Comparar Todos os Itens\n");
+int selecaoduelho;
+scanf("%d", &selecaoduelho);
+switch (selecaoduelho){
+
+case 1:
 printf("Quem tem a maior população?");
 if (populacao1 > populacao2) {
-    printf(" %s venceu no quesito população!\n", cidade1);} else {
+    printf(" %s venceu no quesito população!\n", cidade1);}
+     else if (populacao1 < populacao2) {
     printf(" %s venceu no quesito população!\n", cidade2); }
-
-printf("Quem tem a maior área?");
+    else {
+    printf(" As duas cidades empataram no quesito população!\n"); }
+    break;
+case 2:
+   printf("Quem tem a maior área?");
 if (areacidade1 > areacidade2) {
-    printf(" %s venceu no quesito maior área!\n", cidade1);} else {
+    printf(" %s venceu no quesito maior área!\n", cidade1);} else if (areacidade1 < areacidade2) {
     printf(" %s venceu no quesito maior área!\n", cidade2); }
-
-printf("Quem tem mais pontos turísticos?");
+    else {
+    printf(" As duas cidades empataram no quesito maior área!\n"); }    break;
+case 3:
+    printf("Quem tem mais pontos turísticos?");
 if (pontosturisticos1 > pontosturisticos2) {
-    printf(" %s venceu no quesito mais pontos turísticos!\n", cidade1);} else {
-    printf(" %s venceu no quesito mais pontos turísticos!\n", cidade2); }
-
-printf("Quem tem o maior PIB?");
+    printf(" %s venceu no quesito mais pontos turísticos!\n", cidade1);} else if (pontosturisticos1 < pontosturisticos2) {
+    printf(" %s venceu no quesito mais pontos turísticos!\n", cidade2); } else {
+    printf(" As duas cidades empataram no quesito mais pontos turísticos!\n"); }
+    break;
+case 4:
+    printf("Quem tem o maior PIB?");
 if (PIB1 > PIB2) {
-    printf(" %s venceu no quesito maior PIB!\n", cidade1);} else {
-    printf(" %s venceu no quesito maior PIB!\n", cidade2); }
-
-printf("Quem tem a menor densidade populacional? (Aqui o menor valor vence)");
+    printf(" %s venceu no quesito maior PIB!\n", cidade1);} else if (PIB1 < PIB2) {
+    printf(" %s venceu no quesito maior PIB!\n", cidade2); } else {
+    printf(" As duas cidades empataram no quesito maior PIB!\n"); }
+    break;
+case 5:
+   printf("Quem tem a menor densidade populacional? (Aqui o menor valor vence)");
 if (densidade1 < densidade2) {
-    printf(" %s venceu no quesito menor densidade populacional!\n", cidade1);} else {
-    printf(" %s venceu no quesito menor densidade populacional!\n", cidade2); }
-
-/* Apresentando o vencedor */
+    printf(" %s venceu no quesito menor densidade populacional!\n", cidade1);} else if (densidade1 > densidade2) {
+    printf(" %s venceu no quesito menor densidade populacional!\n", cidade2); } else {
+    printf(" As duas cidades empataram no quesito menor densidade populacional!\n"); }
+    break;
+case 6:
+    /* Apresentando o vencedor */
 printf ("Agora vamos apresentar a Carta Vendedora do nosso Super Trunfo baseado no Super Poder:\n");
 printf("E o grande vencedor é... ");
 if (superpoder1 > superpoder2) {
-    printf(" %s do estado do %s com um super poder de %.2f!\n", cidade1, estado1, superpoder1);} else {
-    printf(" %s do estado do %s com um super poder de %.2f!\n", cidade2, estado2, superpoder2); }
- 
-printf("Obrigado por jogar nosso Super Trunfo! Volte sempre!\n");
- 
+    printf(" %s do estado do %s com um super poder de %.2f!\n", cidade1, estado1, superpoder1);} else if (superpoder1 < superpoder2) {
+    printf(" %s do estado do %s com um super poder de %.2f!\n", cidade2, estado2, superpoder2); } else {
+    printf(" As duas cidades empataram no quesito super poder!\n"); }
+    break;
+    printf("Obrigado por jogar nosso Super Trunfo! Volte sempre!\n");
+default:
+printf("Opção inválida. Por favor, reinicie o jogo e escolha uma opção válida.\n");
+    break;
+}
+            break;
+        case 2:
+            printf("Regras do Jogo:\n- Cada jogador cadastra uma carta com dados de uma cidade brasileira.\n- As cartas serão comparadas com base em atributos como população, área, PIB, etc.\n- O jogador com a carta vencedora em mais atributos ganha o jogo.\n");
+            return 0;
+        case 3:
+            printf("Saindo do jogo. Até a próxima!\n");
+            return 0;
+        default:
+            printf("Opção inválida. Por favor, reinicie o jogo e escolha uma opção válida.\n");
+            return 0;
+    }
     return 0;
 }

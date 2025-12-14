@@ -73,9 +73,8 @@ int main() {
             printf("\nDados extras:\n");
             printf("Densidade Populacional - %s: %.2f hab/km²\n", cidade1, densidade1);
             printf("Densidade Populacional - %s: %.2f hab/km²\n", cidade2, densidade2);
-            printf("PIB per Capita - %s: R$ %.2f\n", cidade1, pibpercapita1 * 10000000);
-            printf("PIB per Capita - %s: R$ %.2f\n", cidade2, pibpercapita2 * 10000000);
-
+            printf("PIB per Capita - %s: R$ %.2f\n", cidade1, (PIB1 * 1000000000) / populacao1);
+            printf("PIB per Capita - %s: R$ %.2f\n", cidade2, (PIB2 * 1000000000) / populacao2);
             printf("\nSuperpoderes: %s (%s): %.2f | %s (%s): %.2f\n\n", cidade1, estado1, superpoder1, cidade2, estado2, superpoder2);
 
             // Duelo entre atributos
